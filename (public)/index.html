@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>ADMIN HANDY PHOENIX</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="styles/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <script src="firebase.js"></script>
+    <script src="firebaseConfig.js"></script>
+    <form class="form-signin">
+      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">ADMIN LOGIN</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <input type="button" class="btn btn-lg btn-success btn-block"  onclick="loginNow()" value="Login">
+      <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+   
+   
+      
+        <!-- Then put toasts within -->
+    <div class="toast" id="wrong" >
+      <div class="toast-header text-danger">
+        Warning
+      </div>
+      <div class="toast-body">
+        WRONG PASSWORD 😢😢😢
+      </div>
+    </div>
+
+    <div class="toast" id="success">
+      <div class="toast-header text-success">
+        Success
+      </div>
+      <div class="toast-body">
+        Congratulations 🎇🎇🎇
+      </div>
+    </div>
+    </form>
+
+ 
+
+        
+    
+  </body>
+</html>
