@@ -85,7 +85,8 @@ function insertStory(){
 }
 function passVal(value){
 	localStorage.setItem("stories",value)
-	console.log("LETS: ",value);
+  console.log("LETS: ",value);
+  location.href = "news.html";
 	
 	
 }
@@ -93,19 +94,20 @@ function passVal(value){
 var rootRef = firebase.database().ref().child("tbl_article");
   rootRef.on("child_added", snap =>
   {
+    var id = snap.key
 	var image = snap.child("image_link").val();
     var comment_story = snap.child("comment_story").val();
     var content_story = snap.child("content_story").val();
     var publish_date=snap.child("publish_date").val();
     var publish_time=snap.child("publish_time").val();
     var title_story=snap.child("title_story").val();      
-      
+      console.log(id)
         var doc =  `  <div class="card mb-3" style="max-width: 50rem;">
         <img class="card-img-top" src="${image}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${title_story}</h5>
           <p class="card-text">${content_story.split(/\s+/).slice(0,10).join(" ") +"..."}</p>
-          <input value="See more" class="btn btn-primary" onclick="passVal('Data')">
+          <input value="See more" class="btn btn-primary" onclick="passVal('${id}')">
           <p class="card-text"><small class="text-muted">Published : ${publish_date} . ${publish_time} </small></p>
         </div>
       </div>  `
