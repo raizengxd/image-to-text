@@ -7,25 +7,12 @@
 <img id="image" src="images.jpg">
 
 <img id = "result">
-<p id="textResult"></p>
+<p ></p>
 <script>
     $("#image").cropper(); 
     function crop(){
-        $("#image").cropper('getCroppedCanvas').toBlob(function (blob){
-            const formData = new FormData();
-            // Pass the image file name as the third parameter if necessary.
-            formData.append('croppedImage', blob, 'example.jpg');            
-            //document.getElementById("result").src =formData.get('croppedImage');
-            
-            var x = document.createElement("IMG");
-            x.setAttribute("src", "img_pulpit.jpg");
-            x.setAttribute("width", "304");
-            x.setAttribute("height", "228");
-            x.setAttribute("alt", "The Pulpit Rock");
-            document.body.appendChild(x);
-
-            
-        });
+        var image_crop= $("#image").cropper('getCroppedCanvas');        
+        document.getElementById("result").src=image_crop.toDataURL('image/jpeg');       
     }
 </script>
 
