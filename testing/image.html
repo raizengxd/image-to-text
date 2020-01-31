@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>test</title>
+</head>
+<body>
+	<script src="ocrad.js"></script>
+	<h1>Hello</h1>
+	<img src="Slide4.png" id="image">
+	<h1 id="message"></h1>
+	<script>
+	var image = document.getElementById('image');
+	var string = OCRAD(image);
+	alert(string)
+	document.getElementById("message").innerHTML=string;
+	</script>
+</body>
+
+</html>
