@@ -1,0 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="cropper.css">
+<script src="cropper.js">  
+
+</script>
+
+<img id="image" src="images.jpg">
+
+<img id = "result">
+<p id="textResult"></p>
+<script>
+    $("#image").cropper(); 
+    function crop(){
+        $("#image").cropper('getCroppedCanvas').toBlob(function (blob){
+            const formData = new FormData();
+            // Pass the image file name as the third parameter if necessary.
+            formData.append('croppedImage', blob, 'example.jpg');            
+            //document.getElementById("result").src =formData.get('croppedImage');
+            
+            var x = document.createElement("IMG");
+            x.setAttribute("src", "img_pulpit.jpg");
+            x.setAttribute("width", "304");
+            x.setAttribute("height", "228");
+            x.setAttribute("alt", "The Pulpit Rock");
+            document.body.appendChild(x);
+
+            
+        });
+    }
+</script>
+
+<button onclick="crop()">
+    Click Me
+</button>
+
+
