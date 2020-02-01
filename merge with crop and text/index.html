@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="cropper.css">
+<script src="cropper.js"></script>
+<script src="ocrad.js"></script>
+
+<img id="image" src="image.jpg">
+
+<img id = "result"><br><br>
+<input type="text" id="message" ></p>
+<script>
+    $("#image").cropper(); 
+    function crop(){
+        var image_crop= $("#image").cropper('getCroppedCanvas');        
+        var image_to_text = image_crop.toDataURL('image/jpeg');
+        document.getElementById("result").src=image_to_text;
+        var string = OCRAD(image_crop);
+        document.getElementById("message").value = string;
+	
+	    console.log("TEST",string);     
+    }
+</script>
+
+<button onclick="crop()">
+    Click Me
+</button>
+
+
